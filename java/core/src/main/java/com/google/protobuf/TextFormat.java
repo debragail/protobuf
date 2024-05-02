@@ -844,7 +844,7 @@ public final class TextFormat {
         nextToken();
         return negative ? Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY;
       }
-      if (currentToken.equalsIgnoreCase("nan")) {
+      if ("nan".equalsIgnoreCase(currentToken)) {
         nextToken();
         return Double.NaN;
       }
@@ -913,16 +913,16 @@ public final class TextFormat {
      * ParseException}.
      */
     public boolean consumeBoolean() throws ParseException {
-      if (currentToken.equals("true")
-          || currentToken.equals("True")
-          || currentToken.equals("t")
-          || currentToken.equals("1")) {
+      if ("true".equals(currentToken)
+          || "True".equals(currentToken)
+          || "t".equals(currentToken)
+          || "1".equals(currentToken)) {
         nextToken();
         return true;
-      } else if (currentToken.equals("false")
-          || currentToken.equals("False")
-          || currentToken.equals("f")
-          || currentToken.equals("0")) {
+      } else if ("false".equals(currentToken)
+          || "False".equals(currentToken)
+          || "f".equals(currentToken)
+          || "0".equals(currentToken)) {
         nextToken();
         return false;
       } else {

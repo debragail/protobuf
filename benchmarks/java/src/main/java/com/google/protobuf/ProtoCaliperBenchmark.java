@@ -128,7 +128,7 @@ public class ProtoCaliperBenchmark {
 
   @BeforeExperiment
   void setUp() throws IOException {
-    if (!dataFile.equals("")) {
+    if (!"".equals(dataFile)) {
       RandomAccessFile file = new RandomAccessFile(new File(dataFile), "r");
       inputData = new byte[(int) file.length()];
       file.readFully(inputData);

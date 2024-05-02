@@ -1160,7 +1160,7 @@ public class JsonFormat {
 
         case ENUM:
           // Special-case google.protobuf.NullValue (it's an Enum).
-          if (field.getEnumType().getFullName().equals("google.protobuf.NullValue")) {
+          if ("google.protobuf.NullValue".equals(field.getEnumType().getFullName())) {
             // No matter what value it contains, we always print it as "null".
             if (alwaysWithQuotes) {
               generator.print("\"");
